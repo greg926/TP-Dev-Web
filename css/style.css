@@ -1,3 +1,21 @@
+/* Définir les variables CSS */
+:root {
+  --font1: "Montserrat", sans-serif;
+  --font2: "Inter", sans-serif;
+  --gray1: #313131;
+  --highlight-color: #49ad09;
+  --highligh-color2: #52bc10;
+  --background-image: url(../img/background-decoration.svg);
+  --hero-left-image: url("../img/hero-left.png");
+  --hero-right-image: url("../img/hero-right.png");
+  --shadow1: 0 24px 38px 0px rgba(0, 0, 0, 0.1),
+    0 9px 46px 0px rgba(0, 0, 0, 0.1), 0 11px 15px -7px rgba(0, 0, 0, 0.1);
+  --shadow2: 0 24px 38px 0px rgba(0, 0, 0, 0.033),
+    0 9px 46px 0px rgba(0, 0, 0, 0.033), 0 11px 15px -7px rgba(0, 0, 0, 0.033);
+  --shadow3: 0 24px 38px 0px rgba(0, 0, 0, 0.03),
+    0 9px 46px 0px rgba(0, 0, 0, 0.03), 0 11px 15px -7px rgba(0, 0, 0, 0.03);
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap");
 
 html {
@@ -5,8 +23,8 @@ html {
 }
 
 * {
-  font-family: "Montserrat", sans-serif;
-  color: #313131;
+  font-family: var(--font1);
+  color: var(--gray1);
 }
 
 body {
@@ -17,14 +35,14 @@ body {
 
 main {
   flex: 1 0 auto;
-  background: url(../img/background-decoration.svg);
+  background: var(--background-image);
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
 }
 
 h1 {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font2);
   font-weight: 900;
 }
 
@@ -43,7 +61,7 @@ h5 {
 }
 
 a {
-  color: #313131;
+  color: var(--gray1);
 }
 
 .new-section {
@@ -54,9 +72,10 @@ a {
   background-color: #f2f2f2;
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-left.png"), url("../img/hero-right.png");
-  background-position: left, right;
-  background-repeat: no-repeat;
+  background: var(--background-image), var(--hero-right-image),
+    var(--hero-left-image);
+  background-position: center, right, left;
+  background-repeat: repeat-y, no-repeat, no-repeat;
   margin-top: 0;
 }
 
@@ -81,7 +100,7 @@ a {
 
 .highlight {
   font-family: "Inter", sans-serif;
-  color: #49ad09;
+  color: var(--highlight-color);
 }
 
 #nav-container {
@@ -92,13 +111,12 @@ a {
 .solid-nav {
   background-color: #ffffff !important;
   transition: 0.2s linear;
-  box-shadow: 0 24px 38px 0px rgba(0, 0, 0, 0.033),
-    0 9px 46px 0px rgba(0, 0, 0, 0.033), 0 11px 15px -7px rgba(0, 0, 0, 0.033);
+  box-shadow: var(--shadow2);
 }
 
 .btn-main-nav,
 .btn-main {
-  background-color: #49ad09;
+  background-color: var(--highlight-color);
   text-transform: none;
   padding: 0 40px;
   border-radius: 5px;
@@ -112,10 +130,9 @@ a {
 
 .btn-main:hover,
 .btn-main-nav:hover {
-  background-color: #52bc10;
+  background-color: var(--highligh-color2);
+  box-shadow: var(--shadow1);
   transition: 0.2s linear;
-  box-shadow: 0 24px 38px 0px rgba(0, 0, 0, 0.1),
-    0 9px 46px 0px rgba(0, 0, 0, 0.1), 0 11px 15px -7px rgba(0, 0, 0, 0.1);
 }
 
 .btn-price {
@@ -130,11 +147,10 @@ a {
 }
 
 .btn-price:hover {
-  background-color: #49ad09;
+  background-color: var(--highlight-color);
   border: none;
   color: #ffffff;
-  box-shadow: 0 24px 38px 0px rgba(0, 0, 0, 0.1),
-    0 9px 46px 0px rgba(0, 0, 0, 0.1), 0 11px 15px -7px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow1);
   transition: 0.5s;
 }
 
@@ -168,9 +184,8 @@ a {
 }
 
 .social-btn:hover {
-  background-color: #52bc10;
-  box-shadow: 0 24px 38px 0px rgba(0, 0, 0, 0.1),
-    0 9px 46px 0px rgba(0, 0, 0, 0.1), 0 11px 15px -7px rgba(0, 0, 0, 0.1);
+  background-color: var(--highligh-color2);
+  box-shadow: var(--shadow1);
 }
 
 .t-btn {
@@ -188,7 +203,7 @@ a {
 }
 
 .t-btn:hover {
-  background-color: #313131;
+  background-color: var(--gray1);
   transition: 0.2s linear;
 }
 
@@ -201,7 +216,7 @@ i.right {
 }
 
 .link-hover:hover {
-  color: #49ad09;
+  color: var(--highlight-color);
 }
 
 .card-wrapper {
@@ -222,8 +237,7 @@ i.right {
 
 .card:hover {
   border: none;
-  box-shadow: 0 24px 38px 0px rgba(0, 0, 0, 0.044),
-    0 9px 46px 0px rgba(0, 0, 0, 0.044), 0 11px 15px -7px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow1);
 }
 
 .c-header {
@@ -238,14 +252,13 @@ i.right {
 
 .green-link {
   font-weight: 500;
-  color: #49ad09;
+  color: var(--highlight-color);
   text-decoration: underline;
 }
 
 .testimonial {
   border: none !important;
-  box-shadow: 0 24px 38px 0px rgba(0, 0, 0, 0.03),
-    0 9px 46px 0px rgba(0, 0, 0, 0.03), 0 11px 15px -7px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow3);
 }
 
 .t-highlight {
@@ -259,7 +272,6 @@ i.right {
   background: white;
   padding: 5px;
   border-radius: 50px;
-
 }
 
 .rating i {
@@ -333,7 +345,7 @@ i.right {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   display: flex;
   justify-content: center;
   align-items: center;
